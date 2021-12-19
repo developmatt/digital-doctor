@@ -10,7 +10,7 @@
 }
 
 .mainCol {
-  width: fit-content;
+  width: calc(100% - 320px);
   margin-left: 1.5rem;
 }
 
@@ -22,6 +22,46 @@
 
 .authorsList {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: calc(25% - 1.25rem) calc(25% - 1.25rem) calc(25% - 1.25rem) calc(25% - 1.25rem);
   gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .postsList {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .authorsList {
+    grid-template-columns: calc(50% - 0.75rem) calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+
+  .mainCol {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .todoCol {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .postsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .authorsList {
+    grid-template-columns: 1fr;
+  }
 }

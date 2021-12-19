@@ -16,4 +16,8 @@ export const Container = styled.li`
         display: flex;
         align-items: center;
     }
+
+    @media (max-width: 960px) {
+        font-size: 1.5rem;
+    }
 `
