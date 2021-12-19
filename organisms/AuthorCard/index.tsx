@@ -13,7 +13,7 @@ interface AuthorCardProps {
 const AuthorCard: React.FC<AuthorCardProps> = ({author}) => {
     const router = useRouter()
 
-    const sendEmail = (e: MouseEvent) => {
+    const sendEmail = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
         window.location.href = 'mailto:' + author.email
     }
