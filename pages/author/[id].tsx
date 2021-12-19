@@ -53,10 +53,17 @@ const Author: NextPage = () => {
 
                 <main className={styles.main}>
                     <Card>
-                        <Description>Posts de {author.name}</Description>
-                        <div className={styles.postsList}>
-                            {posts && posts.map((postData: any) => <PostCard key={postData.id} post={postData} />)}
-                        </div>
+                        {
+                            posts && posts.length
+                            ? <>
+                                { author && <Description>Posts de {author.name}</Description> }
+                                <div className={styles.postsList}>
+                                    {posts && posts.map((postData: any) => <PostCard key={postData.id} post={postData} />)}
+                                </div>
+                            </>
+
+                            : <Description>Este autor ainda não tem publicações</Description>
+                        }
                     </Card>
                 </main>
             </div>

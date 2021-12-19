@@ -61,6 +61,7 @@ const Post: NextPage<PostProps> = () => {
             setAuthorPosts(posts.data)
         }
 
+        setPost(false)
         getPostData()
 
     }, [id])
