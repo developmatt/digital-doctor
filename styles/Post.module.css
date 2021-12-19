@@ -35,3 +35,18 @@
 .comment:last-of-type {
     border-bottom: none;
 }
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .authorCard {
+        width: 100%;
+    }
+
+    .postAside {
+        margin-top: 30px;
+        width: 100%;
+    }
+}

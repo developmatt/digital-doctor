@@ -5,5 +5,9 @@ export const Container = styled.ul`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 20px
+    padding-right: 20px;
+
+    @media (max-width: 470px) {
+        display: none;
+    }
 `
