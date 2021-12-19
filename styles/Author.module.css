@@ -1,0 +1,20 @@
+.row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.aside {
+    width: 300px;
+    margin-right: 1.5rem;
+}
+
+.main {
+    width: calc(100% - 1.5rem);
+}
+
+.postsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
