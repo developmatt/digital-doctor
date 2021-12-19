@@ -9,6 +9,7 @@ import Description from './../atoms/Description/index';
 import ScheduleCard from '../molecules/ScheduleCard';
 import getPosts from './../repositories/posts/getPosts';
 import PostCard from '../molecules/PostCard';
+import AuthorCard from '../molecules/AuthorCard';
 
 interface HomeProps {
   posts: any
@@ -22,21 +23,30 @@ const Home: NextPage<HomeProps> = ({posts, users, todos}) => {
       <Title>Bem vindo ao Digital Doctor!</Title>
       <Description>O fórum de medicina mais confiável do mundo</Description>
       <div className={styles.row}>
-        <div className={styles.todoCol}>
+        <aside className={styles.todoCol}>
           <Card>
             <Description>Principais eventos</Description>
             {todos?.data?.map((todoData: any) => <ScheduleCard key={todoData.id} todo={todoData} />)}
           </Card>
-        </div>
+        </aside>
 
         <div className={styles.mainCol}>
-          <Card>
-            <Description>Últimos posts</Description>
-            <div className={styles.postList}>
-              {posts?.data?.map((postData: any) => <PostCard key={postData.id} post={postData} />)}
+          <section>
+            <Card style={{'marginBottom': '2rem'}}>
+              <Description>Últimos posts</Description>
+              <div className={styles.postsList}>
+                {posts?.data?.map((postData: any) => <PostCard key={postData.id} post={postData} />)}
+              </div>
+            </Card>
+          </section>
+
+          <section>
+            <Description>Principais autores</Description>
+            <div className={styles.authorsList}>
+              {users?.data?.map((authorData: any) => <AuthorCard key={authorData.id} author={authorData} />)}
+
             </div>
-            {/* {users?.data.map((userData: any) => <p key={userData.id}>{userData.name}</p>)} */}
-          </Card>
+          </section>
         </div>
       </div>
     </TemplateDefault>

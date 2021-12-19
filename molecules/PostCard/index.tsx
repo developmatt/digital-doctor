@@ -4,6 +4,7 @@ import { Container, ImageContainer, Body, Footer } from './styles'
 import faker from 'faker'
 import getUser from './../../repositories/users/getUser';
 import { userInfo } from 'os';
+import Link from 'next/link';
 
 interface PostCardProps {
     post: any
@@ -32,32 +33,36 @@ const PostCard: React.FC<PostCardProps> = ({post}) => {
     }, [])
 
     return (
-        <Container href={'/post/' + post.id}>
-            <ImageContainer>
-                <img src={faker.image.imageUrl()} />
+        <Container>
+            <Link href={'/post/' + post.id}>
+                <a>
+                    <ImageContainer>
+                        <img src={faker.image.imageUrl()} />
 
-                <div className='postTitle'>
-                    {post.title}
-                </div>
-            </ImageContainer>
+                        <div className='postTitle'>
+                            {post.title}
+                        </div>
+                    </ImageContainer>
 
-            <Body>
-                <div className="spanContent">
-                    {post.body}
-                </div>
-            </Body>
+                    <Body>
+                        <div className="spanContent">
+                            {post.body}
+                        </div>
+                    </Body>
 
-            {
-                authorData && <Footer>
-                    <img src={faker.image.image()} alt="" className="authorPicture" />
+                    {
+                        authorData && <Footer>
+                            <img src={faker.image.image()} alt="" className="authorPicture" />
 
-                    <div className="authorData">
-                        <span className="authorName">{authorData.name}</span>
-                        <span className="authorEmail">{authorData.email}</span>
-                    </div>
-                </Footer>
-            }
+                            <div className="authorData">
+                                <span className="authorName">{authorData.name}</span>
+                                <span className="authorEmail">{authorData.email}</span>
+                            </div>
+                        </Footer>
+                    }
+                </a>
 
+            </Link>
         </Container>
     )
 }

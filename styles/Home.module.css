@@ -1,19 +1,27 @@
 .row {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .todoCol {
   width: 300px;
+  min-width: 300px;
 }
 
 .mainCol {
-  width: calc(100% - 300px);
+  width: fit-content;
+  margin-left: 1.5rem;
 }
 
-.postList {
+.postsList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.authorsList {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 1.5rem;
 }

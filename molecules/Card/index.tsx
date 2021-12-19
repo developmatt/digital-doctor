@@ -3,11 +3,12 @@ import { Container, Content } from './styles'
 
 interface CardProps {
     children: any
+    style?: any
 }
 
-const Card: React.FC = ({children}) => {
+const Card: React.FC<CardProps> = ({children, style}) => {
     return (
-    <Container>
+    <Container style={style}>
         <Content>
             {children}
         </Content>

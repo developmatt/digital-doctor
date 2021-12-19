@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.a`
+export const Container = styled.div`
     display: block;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 2px 0 rgb(0 0 0 / 12%);
     overflow: hidden;
