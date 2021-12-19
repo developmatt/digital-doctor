@@ -11,3 +11,9 @@
 .mainCol {
   width: calc(100% - 300px);
 }
+
+.postList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}

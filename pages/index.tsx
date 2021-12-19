@@ -6,13 +6,17 @@ import getTodos from './../repositories/todos/getTodos';
 import Card from '../molecules/Card';
 import Title from '../atoms/Title';
 import Description from './../atoms/Description/index';
+import ScheduleCard from '../molecules/ScheduleCard';
+import getPosts from './../repositories/posts/getPosts';
+import PostCard from '../molecules/PostCard';
 
 interface HomeProps {
+  posts: any
   users: any
   todos: any
 }
 
-const Home: NextPage<HomeProps> = ({users, todos}) => {
+const Home: NextPage<HomeProps> = ({posts, users, todos}) => {
   return (
     <TemplateDefault>
       <Title>Bem vindo ao Digital Doctor!</Title>
@@ -21,14 +25,17 @@ const Home: NextPage<HomeProps> = ({users, todos}) => {
         <div className={styles.todoCol}>
           <Card>
             <Description>Principais eventos</Description>
-            {todos?.data.map((todoData: any) => <p key={todoData.id}>{todoData.title}</p>)}
+            {todos?.data?.map((todoData: any) => <ScheduleCard key={todoData.id} todo={todoData} />)}
           </Card>
         </div>
 
         <div className={styles.mainCol}>
           <Card>
-            <Description>Nossos autores</Description>
-            {users?.data.map((userData: any) => <p key={userData.id}>{userData.name}</p>)}
+            <Description>Últimos posts</Description>
+            <div className={styles.postList}>
+              {posts?.data?.map((postData: any) => <PostCard key={postData.id} post={postData} />)}
+            </div>
+            {/* {users?.data.map((userData: any) => <p key={userData.id}>{userData.name}</p>)} */}
           </Card>
         </div>
       </div>
@@ -37,9 +44,10 @@ const Home: NextPage<HomeProps> = ({users, todos}) => {
 }
 
 Home.getInitialProps = async (ctx) => {
-  const users = await getUsers()
   const todos = await getTodos()
-  return { users, todos }
+  const posts = await getPosts()
+  const users = await getUsers()
+  return { todos, posts, users }
 }
 
 export default Home
