@@ -8,17 +8,18 @@ import Link from 'next/link';
 
 interface PostCardProps {
     post: any
+    style?: any
 }
 
 interface AuthorDataProps {
     id: string
     name: string
-    email: string,
-    status: string,
+    email: string
+    status: string
     gender: string
 }
 
-const PostCard: React.FC<PostCardProps> = ({post}) => {
+const PostCard: React.FC<PostCardProps> = ({post, style}) => {
     const [authorData, setAuthorData] = useState<AuthorDataProps>()
 
     useEffect(() => {
@@ -33,7 +34,7 @@ const PostCard: React.FC<PostCardProps> = ({post}) => {
     }, [])
 
     return (
-        <Container>
+        <Container style={style}>
             <Link href={'/post/' + post.id}>
                 <a>
                     <ImageContainer>
