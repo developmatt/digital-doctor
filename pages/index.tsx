@@ -6,10 +6,10 @@ import getTodos from './../repositories/todos/getTodos';
 import Card from '../molecules/Card';
 import Title from '../atoms/Title';
 import Description from './../atoms/Description/index';
-import ScheduleCard from '../molecules/ScheduleCard';
+import ScheduleCard from '../organisms/ScheduleCard';
 import getPosts from './../repositories/posts/getPosts';
-import PostCard from '../molecules/PostCard';
-import AuthorCard from '../molecules/AuthorCard';
+import PostCard from '../organisms/PostCard';
+import AuthorCard from '../organisms/AuthorCard';
 
 interface HomeProps {
   posts: any

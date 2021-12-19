@@ -7,9 +7,9 @@ import styles from '../../styles/Post.module.css'
 import Title from '../../atoms/Title'
 import Card from '../../molecules/Card'
 import getUser from './../../repositories/users/getUser';
-import AuthorCard from '../../molecules/AuthorCard'
+import AuthorCard from '../../organisms/AuthorCard'
 import getPostsFromAuthor from './../../repositories/posts/getPostsFromAuthor';
-import PostCard from '../../molecules/PostCard'
+import PostCard from '../../organisms/PostCard'
 import Description from '../../atoms/Description'
 import getPostComments from '../../repositories/posts/getPostComments'
 

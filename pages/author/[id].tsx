@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import TemplateDefault from '../../templates/default'
 import getUser from './../../repositories/users/getUser'
 import styles from '../../styles/Author.module.css'
-import AuthorCard from '../../molecules/AuthorCard'
+import AuthorCard from '../../organisms/AuthorCard'
 import Card from '../../molecules/Card'
 import getPostsFromAuthor from './../../repositories/posts/getPostsFromAuthor';
-import PostCard from '../../molecules/PostCard'
+import PostCard from '../../organisms/PostCard'
 import Description from '../../atoms/Description'
 
 const Author: NextPage = () => {

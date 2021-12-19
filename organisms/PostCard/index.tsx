@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { Container, ImageContainer, Body, Footer } from './styles'
 import faker from 'faker'
-import getUser from './../../repositories/users/getUser';
+import getUser from '../../repositories/users/getUser';
 import { userInfo } from 'os';
 import Link from 'next/link';
 
