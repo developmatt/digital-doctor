@@ -21,7 +21,7 @@ const AuthorCard: React.FC<AuthorCardProps> = ({author}) => {
     const goToPosts = () => router.push('/author/' + author.id)
 
     return (
-        <Container>
+        <Container data-testid='author-card'>
             <Header>
                 <img src={faker.image.image()} alt="" className="picture" />
             </Header>

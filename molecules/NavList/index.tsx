@@ -18,7 +18,7 @@ const NavList: React.FC = () => {
     }
     
     useEffect(() => {
-        const breadcrumb = Object.keys(availableBreadcrumbs).find((b: string) => router.pathname.indexOf(b) >= 0)
+        const breadcrumb = Object.keys(availableBreadcrumbs).find((b: string) => router?.pathname.indexOf(b) >= 0)
         if(!breadcrumb) return
         setBreadcrumb(availableBreadcrumbs[breadcrumb])
     }, [router])

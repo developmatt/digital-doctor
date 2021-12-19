@@ -34,7 +34,7 @@ const PostCard: React.FC<PostCardProps> = ({post, style}) => {
     }, [])
 
     return (
-        <Container style={style}>
+        <Container data-testid='post-card' style={style}>
             <Link href={'/post/' + post.id}>
                 <a>
                     <ImageContainer>
