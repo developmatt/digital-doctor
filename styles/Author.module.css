@@ -18,3 +18,36 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
+
+@media (max-width: 1200px) {
+    .row {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .postsList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .aside {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 460px) {
+    .postsList {
+        grid-template-columns: 1fr;
+    }
+}
