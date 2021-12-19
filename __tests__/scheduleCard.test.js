@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import ScheduleCard from './index'
+import ScheduleCard from '../organisms/ScheduleCard'
 
 const scheduleMock = {
     title: 'Schedule Card',

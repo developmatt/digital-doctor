@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import AuthorCard from './index'
+import AuthorCard from '../organisms/AuthorCard'
 
 const authorMock = {
     id: '1',
