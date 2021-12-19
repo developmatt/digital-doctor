@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import { Container, Header, Body } from './styles'
 import faker from 'faker'
 import { DefaultButton, SecondaryButton } from '../../atoms/Button'
