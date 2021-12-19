@@ -53,11 +53,11 @@ const Home: NextPage<HomeProps> = ({posts, users, todos}) => {
   )
 }
 
-Home.getInitialProps = async (ctx) => {
+export async function getStaticProps() {
   const todos = await getTodos()
   const posts = await getPosts()
   const users = await getUsers()
-  return { todos, posts, users }
+  return { props: {todos, posts, users} }
 }
 
 export default Home
